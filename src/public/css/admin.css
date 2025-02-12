@@ -1,0 +1,8 @@
+.btn-close {
+    text-align: right;
+    border-radius: 3px;
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
