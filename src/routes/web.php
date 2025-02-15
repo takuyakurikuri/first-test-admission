@@ -21,15 +21,17 @@ Route::post('/confirm',[ContactController::class,'confirm']);
 
 Route::post('/contacts',[ContactController::class,'store']);
 
-//Route::post('/login', [ContactController::class, 'login']);
+/*ログインテスト */
+Route::post('/login', [AuthController::class, 'login']);
 
-//Route::post('/register', [ContactController::class, 'register']);
+Route::post('register',[AuthController::class,'store']);
 
 //Route::post('/logout', [ContactController::class, 'logout']);
 
 Route::middleware('auth')->group(function(){
     route::get('/admin',[AuthController::class, 'admin']);
 });
+
 //Route::get('/admin', [ContactController::class, 'admin']);
 
 Route::get('/thanks',[ContactController::class,'thanks']);

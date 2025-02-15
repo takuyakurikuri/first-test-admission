@@ -1,0 +1,29 @@
+.contact__heading-text {
+    font-size: 26px;
+    color: #8b7969;
+    font-weight: normal;
+}
+
+.contact__heading {
+    padding: 40px 0;
+}
+
+.form {
+    max-width: 800px; width: 100%;
+}
+
+.col-form-label {
+    color: #8b7969;
+}
+
+.form-input__name {
+    padding-right: 0;
+}
+
+.form-input__first-name {
+    padding-right: 0;
+}
+
+main {
+    margin-bottom: 100px;
+}

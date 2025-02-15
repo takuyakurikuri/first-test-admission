@@ -19,13 +19,6 @@ class ContactController extends Controller
         return view('register');
     }
 
-    //public function admin(){
-    //    $contacts = Contact::with('category')->get();
-    //    $contacts = Contact::Paginate(7);
-    //    $categories = Category::all();
-    //    return view('admin',compact('contacts','categories'));
-    //}
-
     public function confirm(ContactRequest $request){ //セッションを使わない場合の処理
         $category = Category::find($request->category_id);
         $contact = $request->only(['first_name','last_name','gender','email','address','building','detail']);
@@ -58,7 +51,7 @@ class ContactController extends Controller
 
     public function destroy(Request $request){
         contact::find($request->id)->delete();
-        return redirect('/admin');
+        return redirect('/admin')->with('message','問い合わせを削除しました');
 
     }
 }

@@ -1,0 +1,73 @@
+.card {
+    max-width: 600px; width: 100%;
+    margin-bottom: 100px;
+}
+.form {
+    padding: 50px 120px;
+}
+
+.form__group {
+    margin-bottom: 30px;
+}
+
+.register-form__heading {
+    padding: 40px 0;
+}
+
+.register-form__heading-text {
+    font-size: 26px;
+    color: #8b7969;
+    font-weight: normal;
+}
+
+.form__label--item {
+    font-size: 20px;
+}
+
+.form__group-title {
+    margin-bottom: 10px;
+    color: #8b7969;
+}
+
+.register__content {
+    background-color: #f1ece8;
+}
+
+.form__button-submit {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    appearance: none;
+    color: #fff;
+    background-color: #82756A;
+    cursor: pointer;
+    max-width: 100px; width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div a {
+    display: block;
+}
+
+.login__button-submit {
+    position: absolute;
+    top: 25px;
+    right: 100px;
+    color: #cfcfca;
+    border:solid 1px #cfcfca !important;
+    background-color: #F6F6F6;
+
+}
+
+.login__button-submit:hover {
+    color: white !important;
+    background-color: #8b7969 !important;
+}
+
+.form-control {
+    font-size: 14px;
+    background-color: #f6f6f6;
+}
+
+
