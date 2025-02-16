@@ -33,3 +33,42 @@ main {
     background-color: #82756A !important;
     cursor: pointer;
 }
+
+.form-input__name-text,
+.form-input__mail,
+.form-input__tel,
+.form-input__address,
+.form-input__building,
+.form-input__category,
+.form-input__detail {
+    color: #8b7969 !important;
+    background-color: #f4f4f4 !important;
+}
+input::placeholder, textarea::placeholder {
+    color: #beb1a6 !important;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #82756A;
+    margin-top: 2px !important;
+    background-color: transparent;
+}
+
+.form-check-input:checked {
+    background-color: #82756A !important;
+    border-color: #82756A !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.form-check-input:focus,
+.form-check-input:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.form-check-label {
+    color: #8b7969;
+}

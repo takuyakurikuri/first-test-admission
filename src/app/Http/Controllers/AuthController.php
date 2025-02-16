@@ -32,7 +32,6 @@ class AuthController extends Controller
         $categories = Category::all();
         return view('admin',compact('contacts','categories'));
     }
-    /*会員登録のオーバーロード */
     public function store(registerRequest $request,CreatesNewUsers $creator): RegisterResponse
     {
         if (config('fortify.lowercase_usernames')) {
@@ -45,14 +44,12 @@ class AuthController extends Controller
 
         return app(RegisterResponse::class);
     }
-/*ログイン */
     public function login(LoginRequest $request)
     {
         return $this->loginPipeline($request)->then(function ($request) {
             return app(LoginResponse::class);
         });
     }
-/*login用 */
     protected function loginPipeline(LoginRequest $request)
     {
         if (Fortify::$authenticateThroughCallback) {

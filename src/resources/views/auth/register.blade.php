@@ -9,7 +9,7 @@
 @endsection
 
 @section('header-on')
-    <a class="login__button-submit btn btn-outline-primary" href="/login">rogin</a>
+    <a class="login__button-submit btn btn-outline-primary rounded-0" href="/login">rogin</a>
 @endsection
 
 @section('content')

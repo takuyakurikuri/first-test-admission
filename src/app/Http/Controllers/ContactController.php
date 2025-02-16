@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Pagination\Paginator;
+use Symfony\Component\HttpFoundation\StreamedResponse;
+
 
 class ContactController extends Controller
 {
@@ -52,10 +54,42 @@ class ContactController extends Controller
     public function destroy(Request $request){
         contact::find($request->id)->delete();
         return redirect('/admin')->with('message','問い合わせを削除しました');
-
     }
 
     public function thanks(){
         return view('thanks');
+    }
+
+    public function exportCsv(){
+        $fileName = 'contacts_' . now()->format('Ymd_His') . '.csv';
+        $response = new StreamedResponse(function () {
+            $handle = fopen('php://output', 'w');
+            
+            fputcsv($handle, ['ID', 'カテゴリID','名前','苗字','性別', 'メールアドレス','住所','建物名','詳細', '作成日','更新日']);
+
+            Contact::chunk(100, function ($contacts) use ($handle) {
+                foreach ($contacts as $contact) {
+                    fputcsv($handle, [
+                        $contact->id,
+                        $contact->category_id,
+                        $contact->first_name,
+                        $contact->last_name,
+                        $contact->gender,
+                        $contact->email,
+                        $contact->address,
+                        $contact->building,
+                        $contact->detail,
+                        $contact->created_at,
+                        $contact->updated_at,
+                    ]);
+                }
+            });
+
+            fclose($handle);
+        });
+        $response->headers->set('Content-Type', 'text/csv');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . $fileName . '"');
+
+        return $response;
     }
 }

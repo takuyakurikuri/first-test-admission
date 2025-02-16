@@ -21,21 +21,18 @@ Route::post('/confirm',[ContactController::class,'confirm']);
 
 Route::post('/contacts',[ContactController::class,'store']);
 
-/*ログインテスト */
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('register',[AuthController::class,'store']);
 
-//Route::post('/logout', [ContactController::class, 'logout']);
-
 Route::middleware('auth')->group(function(){
     route::get('/admin',[AuthController::class, 'admin']);
 });
-
-//Route::get('/admin', [ContactController::class, 'admin']);
 
 Route::get('/thanks',[ContactController::class,'thanks']);
 
 Route::get('/admin/search', [ContactController::class, 'search']);
 
 Route::delete('/admin/delete',[ContactController::class,'destroy']);
+
+Route::get('/admin/csv',[ContactController::class,'exportCsv']);

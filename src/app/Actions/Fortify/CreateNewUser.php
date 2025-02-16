@@ -20,8 +20,6 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
-        //app(RegisterRequest::class)->validate($input);
-
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],

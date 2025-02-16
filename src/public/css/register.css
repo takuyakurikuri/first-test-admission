@@ -69,5 +69,10 @@ div a {
     font-size: 14px;
     background-color: #f6f6f6;
 }
+input::placeholder {
+    color: #beb1a6 !important;
+}
 
-
+input {
+    color: #8b7969 !important;
+}

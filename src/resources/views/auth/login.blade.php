@@ -9,7 +9,7 @@
 @endsection
 
 @section('header-on')
-        <a class="register__button-submit btn btn-outline-primary" href="/register">register</a>
+        <a class="register__button-submit btn btn-outline-primary rounded-0" href="/register">register</a>
 @endsection
 
 @section('content')
