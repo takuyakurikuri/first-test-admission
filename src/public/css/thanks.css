@@ -1,0 +1,35 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.thanks-main {
+    font-size: 1.5rem;
+    color: #6c5c4c;
+    margin-bottom: 20px;
+}
+
+.thanks-back {
+    position: absolute;
+    font-size: 10rem;
+    color: #6c5c4c;
+    opacity: 0.05;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    z-index: -1;
+}
+
+.button-home {
+    padding: 10px 30px;
+    background-color: #8c7b6c;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}

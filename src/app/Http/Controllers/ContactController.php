@@ -31,7 +31,7 @@ class ContactController extends Controller
         $tel = implode('',$request->input('tel',[]));
         $contact = array_merge($contact,['tel' =>$tel]);
         Contact::create($contact);
-        return view('thanks');
+        return redirect('/thanks');
     }
 
     public function search(Request $request){
@@ -53,5 +53,9 @@ class ContactController extends Controller
         contact::find($request->id)->delete();
         return redirect('/admin')->with('message','問い合わせを削除しました');
 
+    }
+
+    public function thanks(){
+        return view('thanks');
     }
 }

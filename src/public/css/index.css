@@ -27,3 +27,9 @@
 main {
     margin-bottom: 100px;
 }
+
+.button-confirm-submit {
+    color: #fff !important;
+    background-color: #82756A !important;
+    cursor: pointer;
+}

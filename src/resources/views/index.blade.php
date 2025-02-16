@@ -140,13 +140,13 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">電話番号 <span class="text-danger">※</span></label>
                         <div class="col-sm-9 d-flex">
-                            <input type="text" class="form-control me-2" name="tel[]" placeholder="080"
+                            <input type="text" class="form-control me-3" name="tel[]" placeholder="080"
                                 value="{{ old('tel.0', request('tel.0')) }}">
                                 <span class="align-self-center">-</span>
-                            <input type="text" class="form-control me-2" name="tel[]" placeholder="1234"
+                            <input type="text" class="form-control me-3 ms-3" name="tel[]" placeholder="1234"
                                 value="{{ old('tel.1', request('tel.1')) }}">
                                 <span class="align-self-center">-</span>
-                            <input type="text" class="form-control" name="tel[]" placeholder="5678"
+                            <input type="text" class="form-control ms-3" name="tel[]" placeholder="5678"
                                 value="{{ old('tel.2', request('tel.2')) }}">
                         </div>
                         @foreach (range(0, 2) as $tel_col)
@@ -251,8 +251,8 @@
                     {{-- <div class="form__button">
                         <button class="form__button-submit" type="submit">確認画面</button>
                     </div> --}}
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-dark px-5">確認画面</button>
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-secondary rounded-0 px-5 button-confirm-submit">確認画面</button>
                     </div>
                 </form>
             </div>
