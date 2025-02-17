@@ -60,14 +60,17 @@ class ContactController extends Controller
         return view('thanks');
     }
 
-    public function exportCsv(){
+    public function exportCsv(Request $request){
         $fileName = 'contacts_' . now()->format('Ymd_His') . '.csv';
-        $response = new StreamedResponse(function () {
+        $response = new StreamedResponse(function () use ($request){
             $handle = fopen('php://output', 'w');
-            
+
             fputcsv($handle, ['ID', 'カテゴリID','名前','苗字','性別', 'メールアドレス','住所','建物名','詳細', '作成日','更新日']);
 
-            Contact::chunk(100, function ($contacts) use ($handle) {
+            $query = Contact::with('category')->KeywordSearch($request->keyword)->GenderSearch($request->gender)
+            ->CategoryIdSearch($request->category_id)->DateSearch($request->date);
+
+            $query->chunk(100, function ($contacts) use ($handle) {
                 foreach ($contacts as $contact) {
                     fputcsv($handle, [
                         $contact->id,

@@ -57,7 +57,7 @@
             </div>
         </form>
         <div class="d-flex justify-content-between my-3">
-            <a href="admin/csv" class="btn btn-primary rounded-0 export-csv-button">エクスポート</a>
+            <a href="{{url('admin/csv') . '?' . http_build_query(request()->query())}}" class="btn btn-primary rounded-0 export-csv-button">エクスポート</a>
             {{ $contacts->links() }}
         </div>
         <div class="">
