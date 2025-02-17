@@ -14,12 +14,15 @@ Laravel環境構築
 5. php artisan migrate
 6. php artisan db:seed
 
-使用技術
-PHP7.4.9
-laravel8.0
-mysql8.0
-Bootstrap5.3
+使用技術  
+PHP7.4.9  
+laravel8.0  
+mysql8.0  
+Bootstrap5.3  
 
 URL
 開発環境：http://localhost/
 phpMyAdmin：http://localhost:8080/
+
+ER図
+![Image](https://github.com/user-attachments/assets/f7fc5a03-ea47-46fa-829b-be69fc8a77dd)
